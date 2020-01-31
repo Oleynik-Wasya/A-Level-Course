@@ -1,7 +1,7 @@
 package com.alevel.java.nix.hometask1;
 
 public class SortBubble {
-    public static int[] sort(int[] array) {
+    public int[] sort(int[] array) {
         int[] res = array.clone();
         boolean isSorted = false;
         int buf;

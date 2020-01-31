@@ -11,16 +11,21 @@ public class HomeTask1 {
         }
         System.out.println();
 
-        int max = FindMaxAndMin.findMax(array);
-        int min = FindMaxAndMin.findMin(array);
+        FindMaxAndMin findMaxAndMin = new FindMaxAndMin();
+        int max = findMaxAndMin.findMax(array);
+        int min = findMaxAndMin.findMin(array);
         System.out.println("Min: " + min);
         System.out.println("Max: " + max);
 
-        SortBubble.sort(array);
-        for (var i = 0; i < array.length; i++){
-            System.out.print(array[i] + " ");;
+        SortBubble sortBubble = new SortBubble();
+        sortBubble.sort(array);
+        for (var i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+            ;
         }
-        System.out.println();;
-        System.out.println(Arrays.toString(PowerOf.arrayPowerOf(array, 2)));;
+        System.out.println();
+        PowerOf powerOf = new PowerOf();
+        System.out.println(Arrays.toString(powerOf.arrayPowerOf(array, 2)));
+        ;
     }
 }
