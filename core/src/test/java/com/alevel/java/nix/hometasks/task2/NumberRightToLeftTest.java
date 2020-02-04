@@ -18,12 +18,13 @@ class NumberRightToLeftTest {
     NumberRightToLeft numberRightToLeft;
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         baOut = new ByteArrayOutputStream();
         out = new PrintStream(baOut);
         System.setOut(out);
         numberRightToLeft = new NumberRightToLeft();
     }
+
     @Test
     public void testNumberRightToLeft() throws IOException {
 
@@ -32,10 +33,10 @@ class NumberRightToLeftTest {
                 "fizzfizzfizzfizzbuzzfizz",
                 "fizzbuzzbuzzfizzfizzfizz",
                 "buzzbuzzbuzzbuzzbuzzbuzz",
-                ""};
+                "fizzbuzz"};
 
         String s;
-        for (var i = 0; i < input.length; i++){
+        for (var i = 0; i < input.length; i++) {
             numberRightToLeft.check(input[i]);
             s = baOut.toString("UTF-8");
             baOut.reset();
@@ -45,7 +46,7 @@ class NumberRightToLeftTest {
 
     }
 
-    void assertNumberRightToLeft(String expected, String value){
+    void assertNumberRightToLeft(String expected, String value) {
         assertEquals(expected, value);
     }
 

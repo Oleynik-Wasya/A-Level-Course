@@ -1,22 +1,25 @@
 package com.alevel.java.nix.hometasks.task2;
 
-import java.io.PrintStream;
-import java.io.PrintWriter;
-
 public class NumberLeftToRight {
     public void check(long value) {
+        if (value == 0) {
+            System.out.print("fizzbuzz");
+            return;
+        }
+        StringBuilder result = new StringBuilder();
         int lengthOfValue = getCountsOfDigits(value);
         long current;
         while (value > 0) {
             current = value / (int) Math.pow(10, --lengthOfValue);
             if ((current) % 2 == 0) {
-                System.out.print("fizz");
+                result.append("fizz");
             }
             if ((current) % 3 == 0) {
-                System.out.print("buzz");
+                result.append("buzz");
             }
             value = (value % (int) Math.pow(10, lengthOfValue));
         }
+        System.out.print(result);
     }
 
     private static int getCountsOfDigits(long number) {

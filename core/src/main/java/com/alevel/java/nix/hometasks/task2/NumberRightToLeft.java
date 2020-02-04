@@ -1,20 +1,23 @@
 package com.alevel.java.nix.hometasks.task2;
 
-import java.io.PrintStream;
-import java.io.PrintWriter;
-
 public class NumberRightToLeft {
     public void check(long value) {
+        if (value == 0) {
+            System.out.print("fizzbuzz");
+            return;
+        }
+        StringBuilder result = new StringBuilder();
         long current;
+
         while (value != 0) {
             current = value % 10;
             if ((current) % 2 == 0) {
-                System.out.print("fizz");
+                result.append("fizz");
             } else if ((current) % 3 == 0) {
-                System.out.print("buzz");
+                result.append("buzz");
             }
             value /= 10;
         }
-
+        System.out.print(result);
     }
 }
