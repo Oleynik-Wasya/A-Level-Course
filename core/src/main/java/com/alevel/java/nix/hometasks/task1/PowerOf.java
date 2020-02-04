@@ -1,4 +1,4 @@
-package com.alevel.java.nix.hometask1;
+package com.alevel.java.nix.hometasks.task1;
 
 public class PowerOf {
     public int[] arrayPowerOf(int[] array, int k) {

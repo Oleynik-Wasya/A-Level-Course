@@ -1,4 +1,4 @@
-package com.alevel.java.nix.hometask1;
+package com.alevel.java.nix.hometasks.task1;
 
 public class FindMaxAndMin {
     public int findMin(int[] array) {

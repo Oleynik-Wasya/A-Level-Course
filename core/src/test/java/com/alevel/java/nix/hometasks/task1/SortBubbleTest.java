@@ -1,5 +1,6 @@
-package com.alevel.java.nix.hometask1;
+package com.alevel.java.nix.hometasks.task1;
 
+import com.alevel.java.nix.hometasks.task1.SortBubble;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
