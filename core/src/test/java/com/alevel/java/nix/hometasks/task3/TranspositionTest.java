@@ -1,4 +1,4 @@
-package com.alevel.java.nix.hometasks.Task3;
+package com.alevel.java.nix.hometasks.task3;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

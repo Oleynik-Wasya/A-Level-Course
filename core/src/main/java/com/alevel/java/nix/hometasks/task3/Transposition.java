@@ -1,4 +1,4 @@
-package com.alevel.java.nix.hometasks.Task3;
+package com.alevel.java.nix.hometasks.task3;
 
 public class Transposition {
     public void transpose(int[][] array) {

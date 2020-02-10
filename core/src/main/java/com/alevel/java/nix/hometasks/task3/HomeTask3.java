@@ -1,7 +1,6 @@
-package com.alevel.java.nix.hometasks.Task3;
+package com.alevel.java.nix.hometasks.task3;
 
 import java.time.DayOfWeek;
-import java.util.Calendar;
 
 public class HomeTask3 {
     public static void main(String[] args) {
