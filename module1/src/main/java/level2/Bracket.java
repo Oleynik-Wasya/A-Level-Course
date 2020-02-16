@@ -1,33 +1,33 @@
 package level2;
 
-import java.util.HashMap;
-import java.util.Stack;
+import java.util.ArrayDeque;
 
 public class Bracket {
-    boolean isBracketsPossible(String s){
-        if (s.length() % 2 != 0){
-            return false;
-        }
-        Stack<Character> stack = new Stack<>();
-        HashMap<Character, Character> brackets = new HashMap<>();
-        brackets.put('{', '}');
-        brackets.put('(', ')');
-        brackets.put('[', ']');
-        char[] charArray = s.toCharArray();
-        int i = 0;
-        while (!brackets.containsValue(charArray[i])){
-            stack.add(charArray[i]);
-            i++;
-        }
-        while (!stack.empty()){
-            if (brackets.get(stack.pop()) != charArray[i]){
-                return false;
+    public boolean isBracketsPossible(String s) {
+        if (s.isEmpty()) return true;
+
+        var stack = new ArrayDeque<Character>();
+
+        for (int i = 0, length = s.length(); i < length; i++) {
+            char current = s.charAt(i);
+            switch (current) {
+                case '{':
+                case '[':
+                case '(':
+                    stack.push(current);
+                    break;
+                case ']':
+                    if (stack.isEmpty() || stack.poll() != '[') return false;
+                    break;
+                case '}':
+                    if (stack.isEmpty() || stack.poll() != '{') return false;
+                    break;
+                case ')':
+                    if (stack.isEmpty() || stack.poll() != '(') return false;
+                    break;
             }
-            i++;
         }
-        if (i != charArray.length){
-            return false;
-        }
-        return true;
+
+        return stack.isEmpty();
     }
 }

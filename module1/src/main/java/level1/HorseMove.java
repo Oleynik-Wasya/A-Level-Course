@@ -1,19 +1,9 @@
 package level1;
 
 public class HorseMove {
-    boolean isItPossibleToMove(int positionX, int positionY, int moveToX, int moveToY){
-        if (positionX + 2 == moveToX && Math.abs(moveToY - positionY) == 1){
-            return true;
-        }
-        if (positionX + 1 == moveToX && Math.abs(moveToY - positionY) == 2){
-            return true;
-        }
-        if (positionX - 1 == moveToX && Math.abs(moveToY - positionY) == 2 ){
-            return true;
-        }
-        if (positionX - 2 == moveToX && Math.abs(moveToY - positionY) == 1){
-            return true;
-        }
-        return false;
+    boolean isItPossibleToMove(int positionX, int positionY, int moveToX, int moveToY) {
+        int rowMove = Math.abs(positionX - moveToX);
+        int columnMove = Math.abs(positionY - moveToY);
+        return (rowMove == 1 && columnMove == 2) || (rowMove == 2 && columnMove == 1);
     }
 }
