@@ -18,49 +18,61 @@ class GameLifeTest {
 
     @Test
     void testGameLife() {
-        int[][] exp1 = {{0, 0, 0, 0, 0,},
-                {0, 1, 0, 1, 0},
-                {0, 1, 0, 0, 0},
-                {0, 0, 0, 0, 0}};
+        int[][] next1 = {{0, 0, 0},
+                {0, 0, 0},
+                {0, 0, 0}};
 
-        int[][] output1 = {{0, 0, 0, 0, 0,},
-                {0, 1, 1, 1, 0},
-                {0, 1, 1, 1, 0},
-                {0, 0, 0, 0, 0}};
+        int[][] initial1 = {{1, 1, 1},
+                {1, 1, 1},
+                {1, 1, 1}};
 
-        gameLife.live(output1);
-        assertCondition(exp1, output1);
+        gameLife.live(initial1);
+        assertCondition(next1, initial1);
 
-        int[][] exp2 = {{0, 0, 0, 0, 0,},
-                {0, 1, 0, 1, 0},
-                {0, 1, 0, 1, 0},
-                {0, 0, 1, 1, 0},
-                {0, 0, 0, 0, 0}};
+        int[][] next2 = {{0, 0, 0},
+                {0, 0, 0},
+                {0, 0, 0}};
 
-        int[][] output2 = {{0, 0, 0, 0, 0,},
-                {0, 1, 1, 1, 0},
-                {0, 1, 1, 1, 0},
-                {0, 1, 0, 1, 0},
-                {0, 0, 0, 0, 0}};
+        int[][] initial2 = {{0, 0, 0},
+                {0, 1, 0},
+                {0, 0, 0}};
 
-        gameLife.live(output2);
-        assertCondition(exp2, output2);
+        gameLife.live(initial2);
+        assertCondition(next2, initial2);
 
-        int[][] exp3 = {{0, 0, 0, 0, 0,},
-                {0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0}};
+        int[][] next3 = {{0, 0, 0, 0, 0, 0},
+                {0, 1, 1, 0, 0, 0},
+                {0, 1, 1, 0, 0, 0},
+                {0, 0, 0, 1, 1, 0},
+                {0, 0, 0, 1, 1, 0},
+                {0, 0, 0, 0, 0, 0}};
 
-        int[][] output3 = {{0, 0, 0, 0, 0,},
-                {0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0}};
+        int[][] initial3 = {{0, 0, 0, 0, 0, 0},
+                {0, 1, 1, 0, 0, 0},
+                {0, 1, 0, 0, 0, 0},
+                {0, 0, 0, 0, 1, 0},
+                {0, 0, 0, 1, 1, 0},
+                {0, 0, 0, 0, 0, 0}};
 
-        gameLife.live(output3);
-        assertCondition(exp3, output3);
+        gameLife.live(initial3);
+        assertCondition(next3, initial3);
 
+        int[][] next4 = {{0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 1, 0, 0},
+                {0, 1, 0, 0, 1, 0},
+                {0, 1, 0, 0, 1, 0},
+                {0, 0, 1, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0}};
+
+        int[][] initial4 = {{0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0},
+                {0, 0, 1, 1, 1, 0},
+                {0, 1, 1, 1, 0, 0},
+                {0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0}};
+
+        gameLife.live(initial4);
+        assertCondition(next4, initial4);
     }
 
     void assertCondition(int[][] expected, int[][] got) {

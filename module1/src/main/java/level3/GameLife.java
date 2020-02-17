@@ -1,23 +1,50 @@
 package level3;
 
+import java.util.ArrayList;
+
 public class GameLife {
-    void live(int[][] world) {
+
+    private class Survives{
+        ArrayList<Integer> X;
+        ArrayList<Integer> Y;
+        Survives(){
+            X = new ArrayList<>();
+            Y = new ArrayList<>();
+        }
+    }
+
+    public void live(int[][] world){
+        perform(world, check(world));
+    }
+
+    private Survives check(int[][] world){
+        Survives survives = new Survives();
         for (int i = 1; i < world.length - 1; i++) {
             for (int j = 1; j < world[0].length - 1; j++) {
                 if (world[i][j] == 1) {
-                    if (countNeighbors(world, i, j) < 2) {
-                        world[i][j] = 0;
-                    }
-                    if (countNeighbors(world, i, j) > 3) {
-                        world[i][j] = 0;
+                    if (countNeighbors(world, i, j) == 2 || countNeighbors(world, i, j) == 3) {
+                        survives.X.add(i);
+                        survives.Y.add(j);
                     }
                 } else {
                     if (countNeighbors(world, i, j) == 3) {
-                        world[i][j] = 1;
+                        survives.X.add(i);
+                        survives.Y.add(j);
                     }
                 }
-
             }
+        }
+        return survives;
+    }
+
+    private void perform(int[][] world, Survives survives) {
+        for (int i = 0; i < world.length; i++){
+            for (int j = 0; j < world[0].length; j++){
+                world[i][j] = 0;
+            }
+        }
+        for (int i = 0; i < survives.X.size(); i++){
+            world[survives.X.get(i)][survives.Y.get(i)] = 1;
         }
     }
 
