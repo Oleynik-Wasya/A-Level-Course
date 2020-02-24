@@ -4,20 +4,21 @@ import java.util.ArrayList;
 
 public class GameLife {
 
-    private class Survives{
+    private class Survives {
         ArrayList<Integer> X;
         ArrayList<Integer> Y;
-        Survives(){
+
+        Survives() {
             X = new ArrayList<>();
             Y = new ArrayList<>();
         }
     }
 
-    public void live(int[][] world){
+    public void live(int[][] world) {
         perform(world, check(world));
     }
 
-    private Survives check(int[][] world){
+    private Survives check(int[][] world) {
         Survives survives = new Survives();
         for (int i = 1; i < world.length - 1; i++) {
             for (int j = 1; j < world[0].length - 1; j++) {
@@ -38,12 +39,12 @@ public class GameLife {
     }
 
     private void perform(int[][] world, Survives survives) {
-        for (int i = 0; i < world.length; i++){
-            for (int j = 0; j < world[0].length; j++){
+        for (int i = 0; i < world.length; i++) {
+            for (int j = 0; j < world[0].length; j++) {
                 world[i][j] = 0;
             }
         }
-        for (int i = 0; i < survives.X.size(); i++){
+        for (int i = 0; i < survives.X.size(); i++) {
             world[survives.X.get(i)][survives.Y.get(i)] = 1;
         }
     }
@@ -77,7 +78,7 @@ public class GameLife {
         return count;
     }
 
-    public static void show(int[][] world){
+    public static void show(int[][] world) {
         for (int i = 0; i < world.length; i++) {
             for (int j = 0; j < world[0].length; j++) {
                 System.out.print(world[i][j] + " ");
