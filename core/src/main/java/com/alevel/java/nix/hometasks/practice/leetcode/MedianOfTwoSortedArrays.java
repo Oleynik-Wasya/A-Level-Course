@@ -17,7 +17,7 @@ public class MedianOfTwoSortedArrays {
                 f++;
                 continue;
             }
-            if (nums1[f] < nums2[s]){
+            if (Math.abs(nums1[f]) < Math.abs(nums2[s])){
                 merged[i] = nums1[f];
                 f++;
             }else {

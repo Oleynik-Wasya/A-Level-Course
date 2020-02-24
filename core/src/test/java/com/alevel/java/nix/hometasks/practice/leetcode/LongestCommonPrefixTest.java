@@ -21,6 +21,7 @@ class LongestCommonPrefixTest {
         assertPrefix("people", lcp.longestCommonPrefix(new String[]{"people","people","people"}));
         assertPrefix("", lcp.longestCommonPrefix(new String[]{"","",""}));
         assertPrefix("hel", lcp.longestCommonPrefix(new String[]{"help","hello","hell"}));
+        assertPrefix("h", lcp.longestCommonPrefix(new String[]{"h","h","h"}));
     }
 
     void assertPrefix(String expected, String got){

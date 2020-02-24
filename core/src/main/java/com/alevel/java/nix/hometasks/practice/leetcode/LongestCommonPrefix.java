@@ -2,6 +2,7 @@ package com.alevel.java.nix.hometasks.practice.leetcode;
 
 public class LongestCommonPrefix {
     public String longestCommonPrefix(String[] strs) {
+
         StringBuilder res = new StringBuilder();
         int length = smallestString(strs);
         int i;

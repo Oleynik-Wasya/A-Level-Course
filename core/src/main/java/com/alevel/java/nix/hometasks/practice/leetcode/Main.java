@@ -9,6 +9,5 @@ public class Main {
 
         MedianOfTwoSortedArrays medianOfTwoSortedArrays = new MedianOfTwoSortedArrays();
         System.out.println(medianOfTwoSortedArrays.find(new int[]{1,4,6}, new int[]{2,5,100}));
-
     }
 }

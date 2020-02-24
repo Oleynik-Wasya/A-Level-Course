@@ -20,6 +20,7 @@ class MedianOfTwoSortedArraysTest {
         assertMedian(2.0, motsa.find(new int[]{1,3}, new int[]{2}));
         assertMedian(3.0, motsa.find(new int[]{1,2,3}, new int[]{4,5}));
         assertMedian(1.0, motsa.find(new int[]{1}, new int[]{1}));
+        assertMedian(-2.0, motsa.find(new int[]{-1, -3}, new int[]{-2}));
     }
 
     void assertMedian(double expected, double got){
